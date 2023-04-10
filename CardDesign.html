@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shoe Product Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 350px;
+      width: 300px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+    }
+    .card img {
+      max-width: 85%;
+      height: auto;
+      align-self: center;
+      margin-top: -8px;
+      padding: 0;
+    }
+    .card h2 {
+      font-size: 24px;
+      font-weight: bold;
+  
+    }
+    .card p {
+      font-size: 18px;
+      margin: 0;
+      margin-top: -5px;
+      padding: 0;
+    }
+
+    .cardHeading h2, h3{
+      margin: 0;
+      padding: 0;
+      text-align: left;
+    }
+    .cardHeading h3{
+      color: #808080;
+    }
+    .cardHeading h4{
+      margin: -10;
+      padding: 0;
+      text-align: center;
+    }
+    .cardtopHeading{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+
+    .cardCondition{
+      margin-top: 10px;
+      align-self: center;
+      color: #3d3d3d;
+      background-color: #E8E8E8;
+      width: fit-content;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 50px;
+      padding-right: 50px;
+      border-radius: 12px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="cardHeading">
+
+      <div class="cardtopHeading">
+        <h2>Suzuki</h2>
+        <div class="cardtopHeading">
+          <h2>250$</h2>
+          <h2 style="color: #808080;">/Day</h2>
+        </div>
+      </div>
+
+      <h2>Swift</h2>
+      <h3>Coupe</h3>
+      <h3>2015</h3>
+    </div>
+
+    <p style=" color: #808080;">ID:4146</p>
+    <img src="assets\carImgs\SuzukiSwift.png" alt="Shoe Product Image">
+    <p style="color: #808080;">Condition: Good</p>
+    <div class="cardCondition">
+      <h3>Rented</h3>
+    </div>
+    
+    <div class="cardtopHeading" style="padding-top: 20px;">
+      <div class="cardtopHeading">
+        <img src="assets\icons\User.png" alt="Shoe Product Image" style="height: 22px; padding-right: 8px;">
+        <p style="color: #000823;">4</p>
+      </div>
+
+        <div class="cardtopHeading">
+          <img src="assets\icons\caricon.png" alt="Shoe Product Image" style="height: 22px; padding-right: 8px;">
+        <p style="color: #000823;">Automatic</p>
+        </div>
+      </div>
+
+  </div>
+</body>
+</html>

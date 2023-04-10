@@ -1,0 +1,478 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  }
+
+:root {
+    --bgColor: #E6EEF4;
+    --TxtColor: #000823;
+  }
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin-top: 100px;
+    padding: 0;
+    margin: 0;
+    background-color: #E6EEF4;
+    color: #000823;
+}
+
+
+#navbar {
+    background-color: #ffffff;
+    height: 60px;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+#navbarBody{
+    padding-left: 250px;
+    width: 100%;
+}
+
+.content {
+    margin-top: 60px; /* make room for the nav and sidebar */
+    margin-left: 235px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 100px;
+    color: #000823;
+}
+
+#navbar h4, #navbar h3 {
+    margin: 0;
+  }
+
+#sidebar {
+    background-color: #ffffff;
+    height: 100%;
+    position: fixed;
+    width: 230px;
+    top: 0;
+    left: 0;
+    z-index: 11;
+
+}
+
+#sidebarBody {
+    padding-left: 10px;
+    padding-right: 10px;
+    
+   }
+
+#sidebarBody div{
+    transition: background-color 0.3s ease;
+    font-size: 13.5px;
+    width: 90%;
+    }
+
+
+.sideLogo {
+	display: block; /* add this line to make the link a block-level element */
+	text-align: center; /* add this line to center the contents */
+}
+#sidebarLogo {
+    width: 150px;
+    cursor: pointer;
+    margin-top: 30px;
+    image-rendering: crisp-edges;
+
+}
+
+.sidebarNavLink {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 210px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-top: 12px;
+    padding-left: 10px;
+  }
+
+  #sidebarBody div:hover{
+    background-color: #E6EEF4;
+  }
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #E6EEF4;
+    margin: 20px 0;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebarFooterLink {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    height: 40px;
+    width: 210px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+
+  .sidebarFooterLink img{
+    height: 24px;
+    padding-right: 25px;
+  }
+
+  .sidebar-footer div{
+    transition: background-color 0.3s ease;
+    }
+
+.sidebar-footer div:hover{
+        background-color: #E6EEF4;
+}
+
+
+.navSearch form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navSearch form input[type="text"] {
+    background-color: #E6EEF4;
+    height: 20px;
+    width: 450px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+
+
+  .card {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 350px;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+  }
+  .card img {
+    max-width: 85%;
+    height: auto;
+    align-self: center;
+    margin-top: -8px;
+    padding: 0;
+  }
+  .card h3 {
+    font-size: 24px;
+    font-weight: bold;
+
+  }
+  .card p {
+    font-size: 6px;
+    margin: 0;
+    margin-top: -5px;
+    padding: 0;
+  }
+
+  .cardHeading h3,h4{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  .cardHeading h4{
+    color: #808080;
+  }
+  .cardHeading h4{
+    margin: -10;
+    padding: 0;
+    text-align: left;
+  }
+  .cardtopHeading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+
+  .cardCondition{
+    margin-top: 10px;
+    align-self: center;
+    color: #3d3d3d;
+    background-color: #E8E8E8;
+    width: fit-content;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 50px;
+    padding-right: 20px;
+    border-radius: 12px;
+  }
+
+ /*///////////////////////////////////////////////////////////////////////////////////*/
+
+  /* Styles for the popup container */
+  #myPopup {
+    position: fixed;
+    top: 0;
+    margin-top: 60px;
+    right: -560px; /* Start offscreen */
+    width: 500px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    transition: right 0.5s ease-out; /* Add animation */
+    z-index: 10;
+  }
+
+  /* Styles for the popup content */
+  #vehiclePopup {
+    padding: 20px;
+    z-index: 10;
+  }
+
+  		/* Styles for the overlay */
+	#overlay {
+			position: fixed;
+			top: 0;
+			right: -9000px; /* Start offscreen */
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      backdrop-filter: blur(0.4px);
+		}
+
+/*///////////////////////////////////////////////////////////////////////////////////*/
+
+  /* Styles for the popup container */
+  #ViewRentalPopup {
+    position: fixed;
+    top: 0;
+    margin-top: 60px;
+    right: -560px; /* Start offscreen */
+    width: 500px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    transition: right 0.5s ease-out; /* Add animation */
+    z-index: 10;
+  }
+
+  /* Styles for the popup content */
+  #viewRentalReturnPopup {
+    padding: 20px;
+    z-index: 10;
+  }
+
+   /* Styles for the popup content */
+   #addRentalReturnPopup {
+    padding: 20px;
+    z-index: 10;
+  }
+
+  		/* Styles for the overlay */
+	#viewOverlay {
+			position: fixed;
+			top: 0;
+			right: -9000px; /* Start offscreen */
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      backdrop-filter: blur(0.4px);
+		}
+
+#studentTable {
+  font-size: 14px;
+  background-color: white;
+  
+}
+
+#studentTable table{
+
+  border-top-left-radius: 20px;
+}
+
+
+#studentTable td{
+  border-top: 1px solid #E6EEF4;
+
+}
+
+.AddBtn{ 
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 14px; 
+  cursor: pointer;
+  background-color: #FFC766;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: all 0.15s ease-in-out;
+}
+
+.AddBtn:hover {
+  background-color: #FFD58C; /* Lighten the background color */
+  transform: translateY(-1.5px); /* Raise the button slightly */
+  box-shadow: #E8E8E8 10px;
+}
+
+
+
+.Rentalf form {
+  display: flex;
+  align-items: center;
+}
+
+.Rentalf form input[type="text"] {
+  background-color: #F9F9F9;
+  height: 15px;
+  width: 90%;
+  border-radius: 3px;
+  padding: 8px;
+  border: 1px solid #B9B9B9;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.Rentalf form input[type="text"]::placeholder {
+  position: relative;
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
+  height: 100%;
+}
+
+#reportLinks{
+ font-size: 12px;
+ font-weight: bold;
+}
+
+#reportLinks a {
+  text-decoration: none;
+  color: #6c6c6c;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+#reportLinks a:hover {
+  text-decoration: underline;
+  text-decoration-color: #FFC766;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+
+.vrhHeading{
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius:10px;
+  height: 40px;
+  width: 13%;
+  box-shadow: 0 0 10px rgb(212, 212, 212);
+}
+
+.reportNextPrev {
+  font-size: 30px;
+  color: black;
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+}
+
+.VRH_banner{
+  color: white;
+  background-image: url('../assets/imgs/ReportBannerBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px rgb(212, 212, 212);
+  border-radius: 24px;
+}
+
+.CRH_banner{
+  color: black;
+  background-image: url('../assets/imgs/CustReportBannerBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px rgb(212, 212, 212);
+  border-radius: 24px;
+}
+
+
+/*                  Menu stuff      */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #f9f9f9;
+  min-width: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  border-radius: 5px;
+  right: 90%;
+  top: 5%;
+  white-space: nowrap; /* Add this property */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+
+  cursor: pointer;
+}
+
+.edit {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.view {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.delete {
+  color: #F44336;
+  text-decoration: none;
+}
+

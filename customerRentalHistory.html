@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+    <head>
+        <script src="jquery-2.1.4.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body onload="asgnClr()">
+	<!-- /********* NavBar *********/ -->
+	<div w3-include-html="navbar.html"></div>
+	<!-- /********* SideBar *********/ -->
+	<div w3-include-html="sidebar.html"></div>
+	
+
+	 
+	
+	<div class="content">
+		<!-- /********* reportLinks *********/ -->
+		<div w3-include-html="reportLinks.html"></div>
+		<br>
+		<div style="display: flex; justify-content: space-between; align-items: right; padding-right: 40px; padding-top: 20px;">
+			<h2 style="margin: 0; padding: 0; font-size: 20px;">Customer Rental History</h2>
+		</div>
+		<br>
+
+		<div id="reportLinks" style="display: flex; width: 96%; justify-content: space-between; font-size: 14px;">
+			<a href="#" class="reportNextPrev">&#8592;</a>
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 42px; margin: 0 auto; padding-right: 10px;" src="assets\icons\drivers-license.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Driver's License No.</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 50px; margin: 0 auto; padding-right: 10px;" src="assets\icons\credit-card.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Card Number</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 58px; margin: 0 auto; padding-right: 10px;" src="assets\icons\preference.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Rental Preferenes</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 38px; margin: 0 auto; padding-right: 10px;" src="assets\icons\dollar.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Outstanding Balance</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>			
+			<a href="#" class="reportNextPrev">&rarr;</a>
+		</div>
+		<br>
+		<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+			<div class="CRH_banner" style="width: 48%; height: fit-content; align-items: flex-start;">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					
+					<table style="width: 100%; border-collapse: collapse;">
+						<tr>
+							<td style="width: 40%; text-align: center; vertical-align: middle; padding-top: 12%;">
+								<img style="width: 80%;" src="assets\icons\User.png" alt="My SVG File">
+								<h3 style="text-align: center; padding-top: 10px;">Customer ID</h3>
+								<h4 style="text-align: center; margin: 0; padding: 0;">1</h4>
+							  </td>
+						  <td style="width: 60%; vertical-align: top; flex-grow: 1; padding-top: 4%;">
+							<h2 style="margin: 0px;">Customer Info</h2>
+							<br>
+							<h5 style="margin: 0px;">Name</h5>
+							<h3 style="margin: 0px;">Nathan</h3>
+							<h3 style="margin: 0px;">Agard</h3>
+							<br>
+							<h5 style="margin: 0px;">Address</h5>
+							<h3 style="margin: 0px;">123 main street</h3>
+							<br>
+							<h5 style="margin: 0px;">Email Address</h5>
+							<h3 style="margin: 0px;">navero@hotmail.com</h3>
+							<br>
+							<h5 style="margin: 0px;">Contact Number</h5>
+							<h3 style="margin: 0px;">123-4567</h3>
+							<br>
+							<br>
+							<h5 style="margin: 0px;">Billing Address</h5>
+							<h3 style="margin: 0px;">123 main street</h3>
+							<br>
+						  </td>
+						  
+						</tr>
+					  </table>
+					  
+				</div>
+				
+			</div>
+				
+			<div style="background-color: white; width: 48%; height: 400px; margin-right: 24px; overflow: auto;">
+				
+				<div id="CustomerList" style="z-index: 0";></div>
+				<script>
+					function loadTable() {
+						var tableDiv = document.getElementById("ActiveVehicles");
+						fetch('php/getCustomers.php')
+							.then(response => response.text())
+							.then(data => {
+								document.getElementById("CustomerList").innerHTML = data;
+							})
+							.catch(error => console.error(error));
+							return;
+					}
+					loadTable(); // call the function when the page loads
+				</script>
+				<!-- add your content here -->
+			  </div>
+				
+		</div>
+	</div>
+	
+	<script src="js/myScript.js">
+		asgnClr();
+		</script>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+    <head>
+        <script src="jquery-2.1.4.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+	<!-- /********* NavBar *********/ -->
+	<div w3-include-html="navbar.html"></div>
+	<!-- /********* SideBar *********/ -->
+	<div w3-include-html="sidebar.html"></div>
+	
+
+	 
+	
+	<div class="content">
+		<div style="display: flex; justify-content: flex-start; align-items: right; padding-right: 40px;">
+			<h2 style="padding-top: 15px; font-size: 14px; padding-right: 40px;">drop down menu</h2>
+			<h2 style="padding-top: 15px; font-size: 14px; padding-right: 40px;">drop down menu2</h2>
+			<h2 style="padding-top: 15px; font-size: 14px; padding-right: 40px;">drop down menu</h2>
+			<h2 style="padding-top: 15px; font-size: 14px;">drop down menu2</h2>
+		</div>
+
+		<div style="display: flex; justify-content: flex-end; align-items: right; padding-right: 40px;">
+			<h2 style="padding-top: 15px; font-size: 14px; padding-right: 40px;">drop down menu</h2>
+				<h2 style="padding-top: 15px; font-size: 14px;">drop down menu2</h2>
+		</div>
+		
+		<div style="display: flex; justify-content: space-between; align-items: right; padding-right: 40px;">
+			<h2 style="margin: 0; padding: 0; font-size: 20px;">Active Cars</h2>
+			<button class="AddBtn" onclick="addRentalReturnPopup()">Add Vehicle</button>
+		</div>
+		
+		<br>
+
+    	<div id="ActiveVehicles" style="z-index: 0";></div>
+		<script>
+			function loadTable() {
+				var tableDiv = document.getElementById("ActiveVehicles");
+				fetch('php/getVehicle.php')
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById("ActiveVehicles").innerHTML = data;
+					})
+					.catch(error => console.error(error));
+					return;
+			}
+			loadTable(); // call the function when the page loads
+		</script>
+		
+
+	
+	</div>
+	
+<div id="overlay"><p>overlay</p></div>
+<!-- Add this div to your HTML code for the popup -->
+<div id="myPopup">
+	
+	<div id="vehiclePopup">
+		
+		<img src="assets\imgs\CarBanner.png" alt="My SVG File" style="width: 100%; margin: 0; cursor: pointer;">
+		<br>
+
+		<p>My variable value: <span id="myVariableValue"></span></p>
+		<p>My variable value: <span id="carmodel"></span></p>
+		<br>
+
+		<p>Thank you for visiting our website. We offer a wide range of products and services to meet your needs. Whether you're looking for a new car, a new home, or just some information about our company, we're here to help.</p>
+		<p>If you have any questions or need assistance, please don't hesitate to contact us. Our friendly and knowledgeable staff are always happy to help.</p>
+		<p>Thank you again for visiting our website. We hope you find everything you're looking for!</p>
+		<button style="position: absolute; left: -20px; bottom: 0; top: 10%; transform: translateX(-50%);
+		background-color: white; padding: 20px; height: 60px; width: 10%; border: none; border-top-left-radius: 15px; border-bottom-left-radius: 15px;" 
+		onclick="hidePopup()">
+		<img src="assets\icons\rightArrow.svg" alt="My SVG File" style="margin-top: -10px; margin-left: -15px;">
+		</button>
+		
+	</div>
+  </div>
+	
+	<script src="js/myScript.js">
+		</script>
+</body>
+</html>
+

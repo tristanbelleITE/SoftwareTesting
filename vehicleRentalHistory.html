@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+    <head>
+        <script src="jquery-2.1.4.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body onload="asgnClr()">
+	<!-- /********* NavBar *********/ -->
+	<div w3-include-html="navbar.html"></div>
+	<!-- /********* SideBar *********/ -->
+	<div w3-include-html="sidebar.html"></div>
+	
+
+	 
+	
+	<div class="content">
+		<!-- /********* reportLinks *********/ -->
+		<div w3-include-html="reportLinks.html"></div>
+		<br>
+		<div style="display: flex; justify-content: space-between; align-items: right; padding-right: 40px; padding-top: 20px;">
+			<h2 style="margin: 0; padding: 0; font-size: 20px;">Vehicle Rental History</h2>
+		</div>
+		<br>
+
+		<div style="display: flex; width: 96%; justify-content: space-between; font-size: 14px; ">
+			<a href="#" class="reportNextPrev">&#8592;</a>
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 42px; margin: 0 auto; padding-right: 10px;" src="assets\icons\check.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Availability</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 50px; margin: 0 auto; padding-right: 10px;" src="assets\icons\agreement.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Condition</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 58px; margin: 0 auto; padding-right: 10px;" src="assets\icons\license-plate.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Plate Number</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="vrhHeading">
+				<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+					<img style="height: 38px; margin: 0 auto; padding-right: 10px;" src="assets\icons\Odometer.png" alt="My SVG File">
+					<div style="align-self: center;">
+						<h4 style="margin: 0px;">Odometer</h4>
+						<h5 style="color: #FFC766; margin: 0px; padding-top: 8px;">Odomfgzdsfeter</h5>
+					</div>
+				</div>
+			</div>			
+			<a href="#" class="reportNextPrev">&rarr;</a>
+		</div>
+		<br>
+		<div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+			<div class="VRH_banner" style="width: 48%; height: fit-content; align-items: flex-start;">
+				<div style="display: flex; position: relative; height:100%; width: 100%; justify-content: space-between; align-items: center;">
+					
+					<table style="height: 100%; width: 100%; border-collapse: collapse;">
+						<tr>
+						  <td style="width: 35%; vertical-align: top; padding-left: 20px; padding-top: 15px; font-size: 25px;">
+							<h2 style="margin: 0px;">Chevrolet</h2>
+							<h2 style="margin: 0px;">Malibu</h2>
+							<h3 style="margin: 0px;">Coupe</h3>
+							<h3 style="margin: 0px;">2022</h3>
+							
+							<div style="padding-top: 60%;">
+								<h3 style=" margin: 0; font-size: 20px;">COLOUR</h3>
+								<h3 style="margin: 0; font-size: 20px;">RED</h3>
+								<br>
+							</div>
+							
+							
+						  </td>
+						  <td style="width:65%; text-align: center; vertical-align: center; padding-top: 12%;">
+							<img style="width: 90%; " src="assets\carImgs\SuzukiSwift.png" alt="My SVG File">
+							<h3 style="margin: 0; padding-top: 20px;">VIN</h3>
+							<h3 style="margin: 0;">#16345678963862905</h3>
+							
+						</td>
+						</tr>
+					  </table>
+					  
+				</div>
+				
+			</div>
+				
+			<div style="background-color: white; width: 48%; height: 400px; margin-right: 24px; overflow: auto;">
+				
+
+				<div id="CustomerList" style="z-index: 0";></div>
+				<script>
+					function loadTable() {
+						var tableDiv = document.getElementById("ActiveVehicles");
+						fetch('php/getCustomers.php')
+							.then(response => response.text())
+							.then(data => {
+								document.getElementById("CustomerList").innerHTML = data;
+							})
+							.catch(error => console.error(error));
+							return;
+					}
+					loadTable(); // call the function when the page loads
+				</script>
+
+				<!-- add your content here -->
+			  </div>
+				
+		</div>
+	</div>
+	
+	<script src="js/myScript.js">
+		asgnClr();
+		</script>
+</body>
+</html>
+
